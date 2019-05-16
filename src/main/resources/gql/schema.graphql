@@ -3,6 +3,7 @@ type __Context {
     Company:        _@href(iri: "http://dbpedia.org/ontology/Company")
     City:           _@href(iri: "http://dbpedia.org/ontology/City")
     Country:        _@href(iri: "http://dbpedia.org/ontology/Country")
+    Event:          _@href(iri: "http://dbpedia.org/ontology/Event")
     name:           _@href(iri: "http://xmlns.com/foaf/0.1/name")
     label:          _@href(iri: "http://www.w3.org/2000/01/rdf-schema#label")
     deathPlace:     _@href(iri: "http://dbpedia.org/ontology/deathPlace")
@@ -14,6 +15,7 @@ type __Context {
     owner:          _@href(iri: "http://dbpedia.org/ontology/owner")
     country:        _@href(iri: "http://dbpedia.org/ontology/country")
     leader:         _@href(iri: "http://dbpedia.org/ontology/leader")
+    capital:        _@href(iri: "http://dbpedia.org/ontology/capital")
 }
 
 type Person @service(id:"dbpedia-sparql") {
@@ -40,5 +42,10 @@ type City @service(id:"dbpedia-sparql") {
 }
 
 type Country @service(id:"dbpedia-sparql") {
+    label: [String] @service(id:"dbpedia-sparql")
+    capital: City @service(id:"dbpedia-sparql")
+}
+
+type Event @service(id:"dbpedia-sparql") {
     label: [String] @service(id:"dbpedia-sparql")
 }

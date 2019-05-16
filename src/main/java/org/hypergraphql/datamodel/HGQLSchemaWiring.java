@@ -121,9 +121,10 @@ public class HGQLSchemaWiring {
                 .map(typeName -> registerGraphQLType(this.hgqlSchema.getTypes().get(typeName)))
                 .collect(Collectors.toSet());
 
-        return GraphQLSchema.newSchema()
+        GraphQLSchema build = GraphQLSchema.newSchema()
                 .query(builtQueryType)
                 .build(builtTypes);
+        return build;
 
     }
 

@@ -1,5 +1,5 @@
 {
-    "name": "hgql-example-with-sparql",
+    "name": "HyperGraphQL Indonesia",
     "schema": "gql/schema.graphql",
     "server": {
         "port": 8080,
